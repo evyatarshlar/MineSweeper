@@ -39,3 +39,7 @@ footer {
     text-align: center;
     line-height: 5vh;
 }
+
+.mark{
+    content-visibility: visible;
+}
