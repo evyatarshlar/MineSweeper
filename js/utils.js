@@ -1,6 +1,6 @@
 'use strict'
 
-function renderBoard(mat, selector) {
+function renderBoard1(mat, selector) {
 
     var strHTML = '<table><tbody>'
     for (var i = 0; i < mat.length; i++) {
@@ -22,11 +22,12 @@ function renderBoard(mat, selector) {
 }
 
 // location is an object like this - { i: 2, j: 7 }
-function renderCell(location, value) {
-    // Select the elCell and set the value
-    const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
-    elCell.innerHTML = value
-}
+
+// function renderCell(location, value) {
+//     // Select the elCell and set the value
+//     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
+//     elCell.innerHTML = value
+// }
 
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
@@ -46,26 +47,24 @@ function playSound(sorc) {
     sound.play()
 }
 
-function findEmptyPos(board) {
+function findEmptyPos(board, idx, jdx) {
     var emptyPoss = []
 
     for (var i = 0; i < board.length; i++) {
-        for (var j = 0; j < board.length; j++) {
+        for (var j = 0; j < board[0].length; j++) {
             var cell = board[i][j]
-            if (!cell.isMine) {
-                var pos = { i: i, j: j }
-                emptyPoss.push(pos)
-            }
+            if (cell.isMine || (i === idx && j === jdx)) continue
+            var pos = { i: i, j: j }
+            emptyPoss.push(pos)
         }
     }
+
+    if (emptyPoss.length === 0) return null
     var randIdx = getRandomInt(0, emptyPoss.length)
     var emptyPos = emptyPoss[randIdx]
-    if (emptyPos) {
         return emptyPos
-    } else {
-        return null
-    }
 }
+
 
 function drawNum2() {
     var idx = getRandomInt(0, gNums2.length)

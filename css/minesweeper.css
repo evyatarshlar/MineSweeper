@@ -25,11 +25,12 @@ table {
     height: 50px;
     border-radius: 7px;
     text-align: center;
-    content-visibility: hidden;
+    /* content-visibility: hidden; */
 }
 
 .shown {
     content-visibility: visible;
+    background-color: rgba(0, 9, 128, 0.699);
 }
 
 footer {
