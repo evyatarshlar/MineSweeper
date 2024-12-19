@@ -142,6 +142,10 @@ function renderBoard(board) {
 
             if (cell.isMine) {
                 cellContent = '💣'
+                if (cell.isMarked) {
+                    cellContent = '🏳️'
+                    className += ' mark'
+                }
             } else if (cell.minesAroundCount) {
                 cellContent = cell.minesAroundCount
             }
@@ -281,7 +285,7 @@ function onCellMarked(elCell, i, j) {
 
 function checkGameOver() {
     var nonMineCells = (gLevel.SIZE ** 2) - gLevel.MINES + gminesToBlow
-    
+
     if (gGame.shownCount === nonMineCells && gGame.markedCount === (gLevel.MINES - gminesToBlow)) {
         gGame.isOn = false
         var elBtn = document.querySelector('.reset')
@@ -398,6 +402,13 @@ function hintRevealed(cellI, cellJ) {
             var cell = gBoard[i][j]
             if (cell.isShown) continue
             renderCellClass(i, j, 'shown')
+            if (cell.isMarked) {
+                if (cell.isMine) {
+                    renderCell(i, j, '💣')
+                } else if (cell.minesAroundCount) {
+                    renderCell(i, j, '💣')
+                }
+            }
             hintRevealedCells.push({ i, j })
         }
     }
