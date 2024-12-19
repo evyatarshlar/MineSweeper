@@ -43,3 +43,11 @@ footer {
 .mark{
     content-visibility: visible;
 }
+
+.modal{
+    margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}

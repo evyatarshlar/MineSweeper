@@ -8,27 +8,36 @@
     <title>Mine Sweeper</title>
 </head>
 
-<body>
-
+<body onload="onInit()">
+   
     <table>
         <tr>
             <td>❤️</td>
             <td></td>
             <td>⏱️</td>
             <td></td>
-            <td>Neighboring</td>
+            <td>🏳️</td>
         </tr>
         <tr>
-            <td class="LIVES"> 1 </td>
+            <td class="LIVES">  </td>
             <td></td>
-            <td class="time"> 1 </td>
+            <td class="timer">  </td>
             <td></td>
-            <td class="neighboring"> 1 </td>
+            <td class="flags">  </td>
         </tr>
     </table>	
-    <button class="reset" onclick="resetGame()">😃</button>
+    <button class="reset" onclick="onInit()">😃</button>
+    
+    <div class="levels">
+        <button  onclick="onLevel(4,2)">Beginner</button>
+        <button onclick="onLevel(8,14)">Medium</button>
+        <button onclick="onLevel(12,32)">Expert</button>
+    </div>
 
     <div class="board-container"></div>
+    <div class="modal">
+        <h2 >End Text</h2>       
+    </div>
     <footer>Evyatar Shlar</footer>
       
     <script src="js/utils.js"></script>
