@@ -54,7 +54,7 @@ function findEmptyPos(board, idx, jdx) {
     if (emptyPoss.length === 0) return null
     var randIdx = getRandomInt(0, emptyPoss.length)
     var emptyPos = emptyPoss[randIdx]
-        return emptyPos
+    return emptyPos
 }
 
 

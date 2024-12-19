@@ -9,8 +9,9 @@
 </head>
 
 <body onload="onInit()">
-   
-    <table>
+    <h1>Mine Sweeper</h1>
+    <button class="dark-mode-btn" onclick="onDarkMode()">Dark Mode</button>
+    <table class="stats">
         <tr>
             <td>❤️</td>
             <td></td>
@@ -19,27 +20,57 @@
             <td>🏳️</td>
         </tr>
         <tr>
-            <td class="LIVES">  </td>
+            <td class="LIVES"></td>
             <td></td>
-            <td class="timer">  </td>
+            <td class="timer"></td>
             <td></td>
-            <td class="flags">  </td>
+            <td class="flags"></td>
         </tr>
-    </table>	
-    <button class="reset" onclick="onInit()">😃</button>
-    
-    <div class="levels">
-        <button  onclick="onLevel(4,2)">Beginner</button>
-        <button onclick="onLevel(8,14)">Medium</button>
-        <button onclick="onLevel(12,32)">Expert</button>
+    </table>
+    <div class="buttons-container">
+        <div class="top-buttons-container">
+            <button class="reset" onclick="onInit()">😃</button>
+            <button class="exterminator" onclick="onExterminator()">🤖</button>
+            <button class="cread-mine" onclick="onCreadMine()">💣</button>
+        </div>
+        <div class="hint-container">
+            <button class="hint1" onclick="onHint(this,0)">💡</button>
+            <button class="hint2" onclick="onHint(this,1)">💡</button>
+            <button class="hint3" onclick="onHint(this,2)">💡</button>
+        </div>
+        <div class="levels">
+            <button onclick="onLevel(4,2)">Beginner</button>
+            <button onclick="onLevel(8,14)">Medium</button>
+            <button onclick="onLevel(12,32)">Expert</button>
+        </div>
+    </div>
+    <div class="modal">
+        <h2>End Text</h2>
     </div>
 
     <div class="board-container"></div>
-    <div class="modal">
-        <h2 >End Text</h2>       
-    </div>
+    <table class="stats">
+        <tr>
+            <td>The Shortest Time</td>
+        </tr>
+        <tr>
+            <td>Beginner</td>
+            <td></td>
+            <td>Medium</td>
+            <td></td>
+            <td>Expert</td>
+        </tr>
+        <tr>
+            <td class="Beginner"></td>
+            <td></td>
+            <td class="Medium"></td>
+            <td></td>
+            <td class="Expert"></td>
+        </tr>
+    </table>
+
     <footer>Evyatar Shlar</footer>
-      
+
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>
