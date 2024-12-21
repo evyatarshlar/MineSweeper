@@ -103,3 +103,14 @@ footer {
 .dark-mode-btn {
     margin: 1px 50px;
 }
+
+.blown{
+    content-visibility: visible;
+    background-color: red;
+}
+
+/* .hint1{
+        color: transparent;
+        text-shadow: 0 0 0 grey;
+      
+} */

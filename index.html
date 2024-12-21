@@ -30,13 +30,14 @@
     <div class="buttons-container">
         <div class="top-buttons-container">
             <button class="reset" onclick="onInit()">😃</button>
-            <button class="exterminator" onclick="onExterminator()">🤖</button>
+            <button class="exterminator" onclick="onExterminator(this)">🤖</button>
             <button class="cread-mine" onclick="onCreadMine()">💣</button>
+            <button class="cread-mine" onclick="onFinishCreadMine()">👍</button>
         </div>
         <div class="hint-container">
-            <button class="hint1" onclick="onHint(this,0)">💡</button>
-            <button class="hint2" onclick="onHint(this,1)">💡</button>
-            <button class="hint3" onclick="onHint(this,2)">💡</button>
+            <button class="hint1" onclick="onHint(this,'hint1')">💡</button>
+            <button class="hint2" onclick="onHint(this,'hint2')">💡</button>
+            <button class="hint3" onclick="onHint(this,'hint3')">💡</button>
         </div>
         <div class="levels">
             <button onclick="onLevel(4,2)">Beginner</button>
